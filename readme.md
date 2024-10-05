@@ -4,8 +4,7 @@
   - Colaboradores;
   - finalidade;
   - como os usuários podem começar com o projeto;
-  - relevância;
-  - suporte e ajuda.
+  - relevância.
 
 ## Colaboradores
    - Fátima Ellen Guilherme da Silva;
@@ -27,7 +26,6 @@ Os usuários podem acessar o Climotrack com seu browser para então ter acesso a
 ## Relevância
 O projeto é útil porque oferece uma consulta e análise precisa e confiável de dados climáticos. A página na internet fornece informações que atendem tanto a fins didáticos e científicos – permitindo uma compreensão aprofundada sobre questões climatológicas – quanto a órgãos governamentais, que podem usar esses dados para otimizar as atividades agrárias da região.
 
-## Suporte e ajuda
 
 
   
