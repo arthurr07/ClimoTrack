@@ -1,0 +1,31 @@
+body {
+    background-color: blue;
+}
+main > div {
+    background-color: white;
+    border-radius: 2em;
+    padding: 2em;
+    margin: auto;
+    width: 70%;
+    display: flex;
+    text-align:center;
+}
+
+main > div > * {
+    width: 100%;
+
+}
+.selecionador > select{
+    display: block;
+    font-size: 2em;
+    background-color: aqua;
+    width: 100%;
+    margin-bottom: 1em;
+    color:antiquewhite;
+}
+.selecionador > input{
+    font-size: 2em;
+    background-color: darkblue;
+    color:antiquewhite;
+    padding: 0.2em;
+}

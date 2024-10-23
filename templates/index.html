@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimoTrack</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <header>
+
+    </header>
+    <nav>
+
+    </nav>
+    <main>
+        <div>
+            <form action="{% url 'table' %}" class="selecionador">
+                <select name="uf" id="uf">
+                    <option value="RN">RN</option>
+                    <option value="PI">PI</option>
+                    <option value="BA">BA</option>
+                </select>
+                <select name="cidade" id="cidade">
+                    <option value="Santa Cruz">Santa Cruz</option>
+                    <option value="Campo Redondo">Campo Redondo</option>
+                    <option value="Lajes Pintadas">Lajes Pintadas</option>
+                    <option value="Jaçanã">Jaçanã</option>
+                    <option value="São Bento do Trairí">São Bento do Trairí</option>
+                </select>
+                <input type="submit" value="Localizar"> 
+            </form>
+            <div>
+                <!-- Criar o mapa -->
+
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
