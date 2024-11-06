@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from app.models import DadosHidricos
+from app.models import DadosHidricos, Cidade
 def index(request):
-    return render(request, 'index.html')
+    list = Cidade.objects.all()
+    return render(request, 'index.html', {'list':list})
 
 def table(request): 
-    list = DadosHidricos.objects.all()
+    city = request.GET.get('cidade')
+    list = DadosHidricos.objects.all().filter(cidade=city)
     return render(request, 'tabela.html', {'list':list})
 # Create your views here.

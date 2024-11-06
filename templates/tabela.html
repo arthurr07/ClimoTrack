@@ -28,27 +28,15 @@
                 </tr>
             </thead> 
             <tbody> 
+                {% for city in list %}
                 <tr>
                     <td>Janeiro</td>
-                    <td>Santa Cruz</td>
-                    <td>123</td>
-                    <td>321</td>
-                    <td>213</td>
+                    <td>{{city.cidade}}</td>
+                    <td>{{ind_pluviometricos}}</td>
+                    <td>{{bal_hidrico}}</td>
+                    <td>{{precipitacao}}</td>
                 </tr>
-                <tr>
-                    <td>Fevereiro</td>
-                    <td>Santa Cruz</td>
-                    <td>123</td>
-                    <td>321</td>
-                    <td>213</td>
-                </tr>
-                <tr>
-                    <td>Março</td>
-                    <td>Santa Cruz</td>
-                    <td>123</td>
-                    <td>321</td>
-                    <td>213</td>
-                </tr>
+                {% endfor %}
                 
             </tbody>
            </table>

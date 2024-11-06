@@ -17,17 +17,16 @@
     <main>
         <div>
             <form action="{% url 'table' %}" class="selecionador">
+                {% csrf_token %}
                 <select name="uf" id="uf">
                     <option value="RN">RN</option>
                     <option value="PI">PI</option>
                     <option value="BA">BA</option>
                 </select>
                 <select name="cidade" id="cidade">
-                    <option value="Santa Cruz">Santa Cruz</option>
-                    <option value="Campo Redondo">Campo Redondo</option>
-                    <option value="Lajes Pintadas">Lajes Pintadas</option>
-                    <option value="Jaçanã">Jaçanã</option>
-                    <option value="São Bento do Trairí">São Bento do Trairí</option>
+                    {% for city in list %}
+                    <option value="{{city.id}}">{{city.nome}}</option>
+                    {% endfor %}
                 </select>
                 <input type="submit" value="Localizar"> 
             </form>
