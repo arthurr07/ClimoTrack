@@ -1,19 +1,25 @@
 from django.contrib import admin
-from app.models import DadosHidricos, Cidade
+from app.models import DadosHidricos, Cidade, Estado, Precipitacao
 
-class DadosHidricosList(admin.ModelAdmin):
-    list_display = ('cidade', 'bal_hidrico', 'ind_pluviometricos', 'precipitacao')
-    list_display_links = ('cidade', 'bal_hidrico', 'ind_pluviometricos', 'precipitacao')
-    search_fields = ('cidade', 'bal_hidrico')
 
-class CidadeList(admin.ModelAdmin):
+class EstadoFilter(admin.ModelAdmin):
     list_display = ('id', 'nome')
     list_display_links = ('id', 'nome')
     search_fields = ('id', 'nome')
+    
+class CidadeFilter(admin.ModelAdmin):
+    list_display = ('id', 'nome')
+    list_display_links = ('id', 'nome')
+    search_fields = ('id', 'nome')
+    
+class PrecipitacaoFilter(admin.ModelAdmin):
+    list_display = ('id', 'cidade', 'data_hora', 'precipitacao')
+    list_display_links = ('id', 'cidade', 'data_hora', 'precipitacao') 
+    search_fields = ('id', 'cidade', 'data_hora', 'precipitacao')
 
+admin.site.register(Estado, EstadoFilter)
+admin.site.register(Cidade, CidadeFilter)
+admin.site.register(Precipitacao, PrecipitacaoFilter)
 
-
-
-admin.site.register(DadosHidricos, DadosHidricosList)
-admin.site.register(Cidade, CidadeList)
 # Register your models here.
+
