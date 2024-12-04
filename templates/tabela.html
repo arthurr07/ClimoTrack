@@ -1,21 +1,6 @@
-    {% load static %}
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-</head>
-<body>
-    <header>
-
-    </header>
-    <nav>
-
-    </nav>
-    <main>
+{% extends "_master.html" %}
+{% load static %}
+{% block main %}
         <div>
            <table>
             <thead>
@@ -32,8 +17,8 @@
                 <tr>
                     <td>Janeiro</td>
                     <td>{{city.cidade}}</td>
-                    <td>{{ind_pluviometricos}}</td>
-                    <td>{{bal_hidrico}}</td>
+                    {% comment %} <td>{{ind_pluviometricos}}</td>
+                    <td>{{bal_hidrico}}</td> {% endcomment %}
                     <td>{{precipitacao}}</td>
                 </tr>
                 {% endfor %}
@@ -41,9 +26,4 @@
             </tbody>
            </table>
         </div>
-    </main>
-    <footer>
-
-    </footer>
-</body>
-</html>
+        {% endblock %}

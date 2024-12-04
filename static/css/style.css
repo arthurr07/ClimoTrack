@@ -1,31 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+
+
+}
+
+
+
 body {
     background-color: blue;
 }
-main > div {
+
+main>div {
     background-color: white;
     border-radius: 2em;
     padding: 2em;
     margin: auto;
     width: 70%;
     display: flex;
-    text-align:center;
+    text-align: center;
 }
 
-main > div > * {
+main>div>* {
     width: 100%;
 
 }
-.selecionador > select{
+
+.selecionador>select {
     display: block;
     font-size: 2em;
     background-color: aqua;
     width: 100%;
     margin-bottom: 1em;
-    color:antiquewhite;
+    color: antiquewhite;
 }
-.selecionador > input{
+
+.selecionador>input {
     font-size: 2em;
     background-color: darkblue;
-    color:antiquewhite;
+    color: antiquewhite;
     padding: 0.2em;
 }
+
+nav {
+    background-color: white;
+    overflow: auto;
+    height: 6em;
+
+
+}
+
+nav > div {
+    float: right;
+}
+
+nav a {
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    vertical-align: middle;
+
+}
+
+ nav span {
+    /* font-size: 2.5em !important; */
+    display: inline-block;
+} 

@@ -20,6 +20,6 @@ from app.views import index,table
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
+    path('', index, name ='home'),
     path('table/', table,name='table'),
 ]

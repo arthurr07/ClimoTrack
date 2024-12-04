@@ -1,20 +1,6 @@
+{% extends "_master.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClimoTrack</title>
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-</head>
-<body>
-    <header>
-
-    </header>
-    <nav>
-
-    </nav>
-    <main>
+{% block main %}
         <div>
             <form action="{% url 'table' %}" class="selecionador">
                 {% csrf_token %}
@@ -35,9 +21,4 @@
 
             </div>
         </div>
-    </main>
-    <footer>
-
-    </footer>
-</body>
-</html>
+    {% endblock %}
