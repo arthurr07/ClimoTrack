@@ -1,0 +1,34 @@
+{% extends "_master.html" %}
+{% load static %}
+{% block main %}
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-box">
+        <div class="login-header">
+            <header>Logar no Climotrack</header>
+        </div>
+        <div class="input-box">
+            <input type="text" class="input-field" placeholder="Email" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <input type="password" class="input-field" placeholder="Password" autocomplete="off" required>
+        </div>
+        <div class="forgot">
+            <section>
+                <input type="checkbox" id="check">
+                <label for="check">Lembrar minha senha</label>
+            </section>
+            <section>
+                <a href="#">Esqueci minha senha</a>
+            </section>
+        </div>
+        <div class="input-submit">
+            <button class="submit-button" id="submit"></button>
+            <label for="submit">Entrar</label>
+        </div>
+        <div class="sign-up-link">
+            <p>Não tem uma conta? <a href="#">Criar uma nova conta</a></p>
+        </div>
+    </div>
+{% endblock main %}
