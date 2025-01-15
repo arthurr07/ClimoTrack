@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="{% static "css/materialSymbols.css" %}">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
-    
 </head>
 <body>
     <nav>
@@ -19,43 +18,50 @@
         </a>
         <div>
             <a href="{% url "home" %}">
-                <span class="material-symbols-outlined material-symbols-filled" >
-                    home
-                </span>
+                <span class="material-symbols-outlined material-symbols-filled">home</span>
                 Home
             </a>
             <a href="">
-                <span class ="material-symbols-outlined material-symbols-filled">
-                    info
-                </span>
+                <span class="material-symbols-outlined material-symbols-filled">info</span>
                 Sobre
             </a>
             <a href="">
-                <span class = "material-symbols-outlined material-symbols-filled">
-                    phone_android
-                </span>
+                <span class="material-symbols-outlined material-symbols-filled">phone_android</span>
                 Contato
             </a>
             <a href="">
-                <span class ="material-symbols-outlined material-symbols-filled">
-                    help
-                </span>
+                <span class="material-symbols-outlined material-symbols-filled">help</span>
                 Ajuda
             </a>
             <a href="{% url "admin:login" %}">
-                <span class ="material-symbols-outlined material-symbols-filled">
-                    login
-                </span>
+                <span class="material-symbols-outlined material-symbols-filled">login</span>
                 Login
             </a>
         </div>
     </nav>
-    
+
     <main>
         {% block main %}{% endblock %}
     </main>
-    <footer>
 
+    <footer>
+        <div>
+           
+            <div>
+                <img src="{% static 'imagens/logo.svg' %}" alt="Logo do IFRN">   
+            </div>
+            
+                <div>
+                    <h4>Links Relacionados</h4>
+                    <ul>
+                        <li><a href="https://portal.ifrn.edu.br/campus/santacruz/" >Site do IFRN-SC</a></li>
+                        <li><a href="https://github.com/arthurr07/ClimoTrack.git" >GitHub do Projeto</a></li>
+                        <li><a href="https://www.w3schools.com/" >Saber mais sobre as tecnologias utilizadas</a></li>
+                        <li><a href=""></a>Banco de dados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

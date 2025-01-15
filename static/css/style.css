@@ -45,25 +45,51 @@ main>div>* {
 
 nav {
     background-color: white;
-    overflow: auto;
+    display: flex; /* Organiza o conteúdo em linha */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Espaça os itens */
+    padding: 0 2em; /* Espaçamento lateral */
     height: 6em;
-
-
 }
 
 nav > div {
-    float: right;
+    display: flex;
 }
 
 nav a {
+    display: flex; /* Ícone e texto lado a lado */
+    align-items: center;
+    gap: 10px; /* Espaco entre ícone e texto */
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    vertical-align: middle;
+    color: black;
 
 }
 
- nav span {
-    /* font-size: 2.5em !important; */
+nav span {
     display: inline-block;
-} 
+}
+
+
+footer {
+    background-color: #f8f9fa;
+    padding: 30px 20px;
+    text-align: center;
+    color: black;
+    margin-top: 155px; /* abaixa o cabecalho */
+    
+}
+
+footer ul {
+    list-style: none; /* Tirar os pontos da lista */
+}
+
+footer ul li {
+    margin: 10px ; /* Espaco entre os itens da lista */
+}
+
+footer div {
+    margin-bottom: 20px; /* Espaco entre a logo e os elementos */
+}
+
