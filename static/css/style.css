@@ -93,3 +93,16 @@ footer div {
     margin-bottom: 20px; /* Espaco entre a logo e os elementos */
 }
 
+nav img {
+    width: 300px; /* Define a largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+   
+}
+
+footer img {
+    width: 250px; /* Define a largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+
+
