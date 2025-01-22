@@ -9,4 +9,7 @@ def table(request):
     #list = Precipitacao.objects.all().filter(cidade=city)
     #return render(request, 'tabela.html', {'list':list})
     return render(request, 'tabela.html')
+
+def login(request):
+    return render(request, 'login.html')
 # Create your views here.
