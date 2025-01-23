@@ -15,12 +15,38 @@ class Cidade(models.Model):
     estado = models.ForeignKey(Estado, on_delete = models.CASCADE, default=1)
     
     def __str__(self) -> str:
-        return self.nome
+        return self.estacao
     
 class DadosHidricos(models.Model):
-    cidade = models.ForeignKey(Cidade, on_delete = models.CASCADE, default=1)
-    temperatura = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
-    precipitacao = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    estacao_id = models.ForeignKey(Cidade, on_delete = models.CASCADE, default=1)
+    t_med_jan = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    t_med_fev = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    t_med_mar = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    t_med_abr = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    t_med_mai = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    t_med_jun = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    t_med_jul = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    t_med_ago = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    t_med_set = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    t_med_out = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    t_med_nov = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    t_med_dez = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    precip_md_jan = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    precip_md_fev = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    precip_md_mar = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    precip_md_abr = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    precip_md_mai = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    precip_md_jun = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    precip_md_jul = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    precip_md_ago = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    precip_md_set = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    precip_md_out = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    precip_md_nov = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    precip_md_dez = models.DecimalField(null = False, max_digits = 10, decimal_places = 4)
+    
+    
+    
+    
 
 # class DadosHidricos(models.Model):
 #     precipitacao = models.ForeignKey(Precipitacao, on_delete = models.CASCADE)
