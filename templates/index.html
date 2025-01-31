@@ -2,23 +2,23 @@
 {% load static %}
 {% block main %}
         <div>
-            <form action="{% url 'table' %}" class="selecionador">
+            <form action="{% url 'home' %}" class="selecionador" method = "POST">
                 {% csrf_token %}
-                <select name="uf" id="uf">
-                    <option value="RN">RN</option>
-                    <option value="PI">PI</option>
-                    <option value="BA">BA</option>
+                <select id = 'uf'>
+                    {% for uf in uf_list %}
+                    <option value="{{uf.id}}">{{uf.nome}}</option>
+                    {% endfor %}
                 </select>
                 <select name="cidade" id="cidade">
-                    {% for city in list %}
-                    <option value="{{city.id}}">{{city.nome}}</option>
+                    {% for city in city_list %}
+                    <option value="{{city.id}}">{{city.estacao}}</option>
                     {% endfor %}
                 </select>
                 <input type="submit" value="Localizar"> 
             </form>
             <div>
                 <!-- Criar o mapa -->
-
+                id {{data.id}}
             </div>
         </div>
     {% endblock %}

@@ -78,7 +78,9 @@ footer {
     text-align: center;
     color: black;
     margin-top: 155px; /* abaixa o cabecalho */
-    
+    position: fixed;
+    width: 100%;
+    bottom: 0; /*fundo*/
 }
 
 footer ul {
