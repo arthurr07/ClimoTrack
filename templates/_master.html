@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static "css/materialSymbols.css" %}">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <link rel="stylesheet" href="{% static "css/login.css" %}">
-    
+    <link rel="stylesheet" href="{% static "css/devs.css" %}">
     <!-- <link rel="stylesheet" href="{% static "css/login.css" %}"> -->
 </head>
 <body>
@@ -28,7 +28,7 @@
                 <span class="material-symbols-outlined material-symbols-filled">info</span>
                 Sobre
             </a>
-            <a href="">
+            <a href="{% url "devs" %}" >
                 <span class="material-symbols-outlined material-symbols-filled">groups</span>
                 Equipe
             </a>

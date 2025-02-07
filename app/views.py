@@ -17,4 +17,8 @@ def table(request):
 
 def login(request):
     return render(request, 'login.html')
+
+
+def devs(request):
+    return render(request, 'devs.html')
 # Create your views here.
