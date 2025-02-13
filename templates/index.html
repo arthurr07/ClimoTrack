@@ -1,7 +1,7 @@
 {% extends "_master.html" %}
 {% load static %}
 {% block main %}
-        <div>
+        <div class="meio">
             <form action="{% url 'home' %}" class="selecionador" method = "POST">
                 {% csrf_token %}
                 <select id = 'uf'>
@@ -16,7 +16,7 @@
                 </select>
                 <input type="submit" value="Localizar"> 
             </form>
-            <div>
+            <div class="tabela">
                 <!-- Criar o mapa -->
                 <table>
                     <caption>{% if cidade_selecionada %}{{ cidade_selecionada.estacao }}{% else %}Selecione uma cidade{% endif %}</caption>
@@ -196,7 +196,12 @@
                             </td>
                             
                         </tr>
-                        
+                        <tr>
+                            <th>Média</th>
+                            <td>{{multiplicacao.med_temp}}</td>
+                            <td>{{multiplicacao.med_precip}}</td>
+                            <th>Meses Secos: {{total}}</th>
+                        </tr>
                     </tbody>
                 </table>
             </div>

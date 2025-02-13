@@ -73,7 +73,6 @@ footer {
     padding: 30px 20px;
     text-align: center;
     color: black;
-    margin-top: 155px; /* abaixa o cabecalho */
     position: fixed;
     width: 100%;
     bottom: 0; /*fundo*/
@@ -102,6 +101,29 @@ footer img {
     width: 250px; /* Define a largura da imagem */
     height: auto; /* Mantém a proporção da imagem */
 }
-
-
+.tabela {
+    display: flex;
+    justify-content: center; /* Centraliza a tabela horizontalmente */
+    align-items: flex-start; /* Alinha a tabela ao topo da div */
+  }
+  
+table{
+    width: 95%;
+    border-collapse: collapse;
+    background-color: #384866;
+}
+td, th{
+    border: 5px solid white; /* Adiciona uma borda preta de 1px */
+    padding: 5px;
+    color: white;
+}
+caption{
+    color:#384866;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: 'Arial', sans-serif;
+}
+.meio{
+    margin-top: 110px;
+}
 
