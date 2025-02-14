@@ -22,20 +22,22 @@ main>div>* {
     width: 100%;
 
 }
-
+.selecionador{
+    margin-top: 30px;
+}
 .selecionador>select {
     display: block;
     font-size: 2em;
-    background-color: aqua;
+    background-color: #539CB8;
     width: 100%;
     margin-bottom: 1em;
-    color: antiquewhite;
+    color: white;
 }
 
 .selecionador>input {
     font-size: 2em;
-    background-color: darkblue;
-    color: antiquewhite;
+    background-color: #384866;
+    color: white;
     padding: 0.2em;
 }
 
@@ -69,13 +71,14 @@ nav span {
 
 
 footer {
+    box-sizing: border-box;
     background-color: #f8f9fa;
     padding: 30px 20px;
     text-align: center;
     color: black;
-    position: fixed;
+    position: relative;
     width: 100%;
-    bottom: 0; /*fundo*/
+    margin-top: 115px;
     
 }
 
@@ -126,4 +129,12 @@ caption{
 .meio{
     margin-top: 110px;
 }
-
+h4{
+    margin-top: 50px;
+    font-size: 35px;
+    color:#384866;
+}
+area:hover{
+    background-color: red;
+    
+}
