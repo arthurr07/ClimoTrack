@@ -24,10 +24,10 @@ def index(request):
                 'out': 2 * float(data.t_med_out),
                 'nov': 2 * float(data.t_med_nov),
                 'dez': 2 * float(data.t_med_dez),
-                'med_temp': (data.t_med_jan + data.t_med_fev + data.t_med_mar + data.t_med_abr + data.t_med_mai + data.t_med_jun + data.t_med_jul + data.t_med_ago + data.t_med_set + data.t_med_out 
-                             + data.t_med_nov + data.t_med_dez)/12,
-                'med_precip': (data.precip_md_jan + data.precip_md_fev + data.precip_md_mar + data.precip_md_abr + data.precip_md_mai + data.precip_md_jun + data.precip_md_jul + data.precip_md_ago + data.precip_md_set + data.precip_md_out 
-                             + data.precip_md_nov + data.precip_md_dez)/12,
+                'med_temp': round((data.t_med_jan + data.t_med_fev + data.t_med_mar + data.t_med_abr + data.t_med_mai + data.t_med_jun + data.t_med_jul + data.t_med_ago + data.t_med_set + data.t_med_out 
+                             + data.t_med_nov + data.t_med_dez)/12,4),
+                'med_precip': round((data.precip_md_jan + data.precip_md_fev + data.precip_md_mar + data.precip_md_abr + data.precip_md_mai + data.precip_md_jun + data.precip_md_jul + data.precip_md_ago + data.precip_md_set + data.precip_md_out 
+                             + data.precip_md_nov + data.precip_md_dez)/12,4),
             }
             if  data.precip_md_jan <= multiplicacao.get('jan') : total = total+1
             if  data.precip_md_fev <= multiplicacao.get('fev') : total = total+1
