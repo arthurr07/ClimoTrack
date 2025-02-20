@@ -15,7 +15,6 @@
    - Júlio César Araújo da Silva;
    - Marcelo Figueiredo Barbosa Junior;
    - Renato Ferreira do Nascimento;
-   - Thobias Henrique de Maria Oliveira.
 
 ## Finalidade
 O projeto consiste em um website que, utilizando dados fornecidos pela Superintendência do Desenvolvimento do Nordeste (SUDENE), classifica e exibe os subtipos climáticos de toda a região Nordeste do Brasil.
