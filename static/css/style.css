@@ -138,3 +138,13 @@ area:hover{
     background-color: red;
     
 }
+
+.colunas{
+    display: flex;
+    width: 50%;
+    margin: auto;
+}
+
+.colunas>*{
+    width: 100%;
+}
