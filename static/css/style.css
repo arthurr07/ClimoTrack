@@ -84,6 +84,7 @@ footer {
 
 footer ul {
     list-style: none; /* Tirar os pontos da lista */
+    margin-top: 30px;
 }
 
 footer ul li {
