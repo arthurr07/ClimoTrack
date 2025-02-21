@@ -22,15 +22,21 @@
                     <h4>
                         Subtipo Climático: 
                         {% if total < 1 %}
-                        Muito Úmido
+                        Superúmido
                         {% elif total <= 3%}
                         Úmido
                         {% elif total <= 5%}
-                        Seco
-                        {% elif total <= 7%}
-                        Muito Seco
+                        Semi-úmido
+                        {% elif total == 6%}
+                        Semi-árido brando
+                        {% elif total <= 8%}
+                        Mediano
+                        {% elif total <= 10%}
+                        Forte
+                        {% elif total == 11%}
+                        Subdesértico/Muito forte
                         {% else %}
-                        Deserto
+                        Desértico
                         {% endif %}
 
                     </h4>
