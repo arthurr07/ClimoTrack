@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from app.models import Cidade, DadosHidricos, Estado
 def index(request):
-    city_list = Cidade.objects.all()
+    city_list = Cidade.objects.all().order_by("estacao")
     uf_list = Estado.objects.all()
 
     if request.method == "POST":
