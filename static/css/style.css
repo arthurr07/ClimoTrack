@@ -14,13 +14,15 @@ main>div {
     padding: 2em;
     margin: auto;
     width: 70%;
-    display: flex;
+
     text-align: center;
 }
+.d-flex{
+    display: flex;
+}
 
-main>div>* {
+.d.flex>* {
     width: 100%;
-
 }
 .selecionador{
     margin-top: 30px;
@@ -153,3 +155,24 @@ area:hover{
 .ul a{
     color: #000000;
 }
+.legenda{
+    width: 300px;
+    background-color: #AAA;
+    padding: 1em;
+    text-align: left;
+    border-radius: .5em;
+    display: block;
+
+}
+
+.legenda li{
+    font-weight: bolder;
+    /* text-align: left; */
+    font-size: .8em;
+}
+
+.legenda ul{
+    margin-top: .5em;
+    list-style: none;
+}
+

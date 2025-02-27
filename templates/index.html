@@ -2,241 +2,252 @@
 {% load static %}
 {% block main %}
         <div class="meio">
-            <div>
-                <h4>Selecione a Localização: </h4>
-                <form action="{% url 'home' %}" class="selecionador" method = "POST">
-                    {% csrf_token %}
-                    <select id = 'uf'>
-                        {% for uf in uf_list %}
-                        <option value="{{uf.id}}">{{uf.nome}}</option>
-                        {% endfor %}
-                    </select>
-                    <select name="cidade" id="cidade">
-                        {% for city in city_list %}
-                        <option value="{{city.id}}" {% if city.id == cidade_selecionada.id %}selected{% endif %}>{{city.estacao}}</option>
-                        {% endfor %}
-                    </select>
-                    <input type="submit" value="Localizar"> 
-                </form>
-                    {% if data %}
-                    <h4>
-                        Subtipo Climático: 
-                        {% if total < 1 %}
-                        Superúmido
-                        {% elif total <= 3%}
-                        Úmido
-                        {% elif total <= 5%}
-                        Semi-úmido
-                        {% elif total == 6%}
-                        Semi-árido brando
-                        {% elif total <= 8%}
-                        Mediano
-                        {% elif total <= 10%}
-                        Forte
-                        {% elif total == 11%}
-                        Subdesértico/Muito forte
-                        {% else %}
-                        Desértico
+            <div class="d-flex">
+                <div>
+                    <h4>Selecione a Localização: </h4>
+                    <form action="{% url 'home' %}" class="selecionador" method = "POST">
+                        {% csrf_token %}
+                        <select id = 'uf'>
+                            {% for uf in uf_list %}
+                            <option value="{{uf.id}}">{{uf.nome}}</option>
+                            {% endfor %}
+                        </select>
+                        <select name="cidade" id="cidade">
+                            {% for city in city_list %}
+                            <option value="{{city.id}}" {% if city.id == cidade_selecionada.id %}selected{% endif %}>{{city.estacao}}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="Localizar"> 
+                    </form>
+                        {% if data %}
+                        <h4>
+                            Subtipo Climático: 
+                            {% if total < 1 %}
+                            Superúmido
+                            {% elif total <= 3%}
+                            Úmido
+                            {% elif total <= 5%}
+                            Semi-úmido
+                            {% elif total == 6%}
+                            Semi-árido brando
+                            {% elif total <= 8%}
+                            Mediano
+                            {% elif total <= 10%}
+                            Forte
+                            {% elif total == 11%}
+                            Subdesértico/Muito forte
+                            {% else %}
+                            Desértico
+                            {% endif %}
+
+                        </h4>
                         {% endif %}
+                </div>
+            
+                <div class="tabela">
+                    <!-- Criar o mapa -->
+                    {% if data %}
+                    <table>
+                        <caption>{% if cidade_selecionada %}{{ cidade_selecionada.estacao }}{% else %}Selecione uma cidade{% endif %}</caption>
+                        <thead>
+                            <tr>
+                                <th>Mês</th>
+                                <th>Temp. (C°)</th>
+                                <th>Prec. (mm)</th>
+                                <th>Condição PM</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Jan</th>
+                                <td>{{data.t_med_jan}}</td>
+                                <td>{{data.precip_md_jan}}</td>
+                                <td>
+                                    {% if data.precip_md_jan <= multiplicacao.jan %}
+                                    Seco
+                                {% else %}
+                                    Chuvoso
+                                {% endif %}
+                                </td>
+                            </tr>
 
-                    </h4>
+                            <tr>
+                                <th>Fev</th>
+                                <td>{{data.t_med_fev}}</td>
+                                <td>{{data.precip_md_fev}}</td>
+                                <td>
+                                    {% if data.precip_md_fev <= multiplicacao.fev %}
+                                    Seco
+                                {% else %}
+                                    Chuvoso
+                                {% endif %}
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <th>Mar</th>
+                                <td>{{data.t_med_mar}}</td>
+                                <td>{{data.precip_md_mar}}</td>
+                                <td>
+                                    {% if data.precip_md_mar <= multiplicacao.mar %}
+                                    Seco
+                                {% else %}
+                                    Chuvoso
+                                {% endif %}
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <th>Abr</th>
+                                <td>{{data.t_med_abr}}</td>
+                                <td>{{data.precip_md_abr}}</td>
+                                <td>
+                                    {% if data.precip_md_abr <= multiplicacao.abr %}
+                                    Seco
+                                {% else %}
+                                    Chuvoso
+                                {% endif %}
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <th>Mai</th>
+                                <td>{{data.t_med_mai}}</td>
+                                <td>{{data.precip_md_mai}}</td>
+                                <td>
+                                    {% if data.precip_md_mai <= multiplicacao.mai %}
+                                    Seco
+                                {% else %}
+                                    Chuvoso
+                                {% endif %}
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <th>Jun</th>
+                                <td>{{data.t_med_jun}}</td>
+                                <td>{{data.precip_md_jun}}</td>
+                                <td>
+                                    {% if data.precip_md_jun <= multiplicacao.jun %}
+                                    Seco
+                                {% else %}
+                                    Chuvoso
+                                {% endif %}
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <th>Jul</th>
+                                <td>{{data.t_med_jul}}</td>
+                                <td>{{data.precip_md_jul}}</td>
+                                <td>
+                                    {% if data.precip_md_jul <= multiplicacao.jul %}
+                                    Seco
+                                {% else %}
+                                    Chuvoso
+                                {% endif %}
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <th>Ago</th>
+                                <td>{{data.t_med_ago}}</td>
+                                <td>{{data.precip_md_ago}}</td>
+                                <td>
+                                    {% if data.precip_md_ago <= multiplicacao.ago %}
+                                    Seco
+                                {% else %}
+                                    Chuvoso
+                                {% endif %}
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <th>Set</th>
+                                <td>{{data.t_med_set}}</td>
+                                <td>{{data.precip_md_set}}</td>
+                                <td>
+                                    {% if data.precip_md_set <= multiplicacao.set %}
+                                    Seco
+                                {% else %}
+                                    Chuvoso
+                                {% endif %}
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <th>Out</th>
+                                <td>{{data.t_med_out}}</td>
+                                <td>{{data.precip_md_out}}</td>
+                                <td>
+                                    {% if data.precip_md_out <= multiplicacao.out %}
+                                    Seco
+                                {% else %}
+                                    Chuvoso
+                                {% endif %}
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <th>Nov</th>
+                                <td>{{data.t_med_nov}}</td>
+                                <td>{{data.precip_md_nov}}</td>
+                                <td>
+                                    {% if data.precip_md_nov <= multiplicacao.nov %}
+                                    Seco
+                                {% else %}
+                                    Chuvoso
+                                {% endif %}
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <th>Dez</th>
+                                <td>{{data.t_med_dez}}</td>
+                                <td>{{data.precip_md_dez}}</td>
+                                <td>
+                                    {% if data.precip_md_dez <= multiplicacao.dez %}
+                                    Seco
+                                {% else %}
+                                    Chuvoso
+                                {% endif %}
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <th>Média</th>
+                                <td>{{multiplicacao.med_temp}}</td>
+                                <td>{{multiplicacao.med_precip}}</td>
+                                <th>Meses Secos: {{total}}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {% else %}
+                        <img src="{% static "imagens/LogoRN.png" %}" alt="Logo do RN" usemap="#mapa">
+                        <map name="mapa" id="mapa">
+                            <area shape="poly" coords="0,0,0,250,250,0,250,250" href="https://github.com/arthurr07/ClimoTrack" alt="">
+                        </map>
                     {% endif %}
-            </div>
-            <div class="tabela">
-                <!-- Criar o mapa -->
-                {% if data %}
-                <table>
-                    <caption>{% if cidade_selecionada %}{{ cidade_selecionada.estacao }}{% else %}Selecione uma cidade{% endif %}</caption>
-                    <thead>
-                        <tr>
-                            <th>Mês</th>
-                            <th>Temp. (C°)</th>
-                            <th>Prec. (mm)</th>
-                            <th>Condição PM</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>Jan</th>
-                            <td>{{data.t_med_jan}}</td>
-                            <td>{{data.precip_md_jan}}</td>
-                            <td>
-                                {% if data.precip_md_jan <= multiplicacao.jan %}
-                                Seco
-                            {% else %}
-                                Chuvoso
-                            {% endif %}
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th>Fev</th>
-                            <td>{{data.t_med_fev}}</td>
-                            <td>{{data.precip_md_fev}}</td>
-                            <td>
-                                {% if data.precip_md_fev <= multiplicacao.fev %}
-                                Seco
-                            {% else %}
-                                Chuvoso
-                            {% endif %}
-                            </td>
-                            
-                        </tr>
-
-                        <tr>
-                            <th>Mar</th>
-                            <td>{{data.t_med_mar}}</td>
-                            <td>{{data.precip_md_mar}}</td>
-                            <td>
-                                {% if data.precip_md_mar <= multiplicacao.mar %}
-                                Seco
-                            {% else %}
-                                Chuvoso
-                            {% endif %}
-                            </td>
-                            
-                        </tr>
-
-                        <tr>
-                            <th>Abr</th>
-                            <td>{{data.t_med_abr}}</td>
-                            <td>{{data.precip_md_abr}}</td>
-                            <td>
-                                {% if data.precip_md_abr <= multiplicacao.abr %}
-                                Seco
-                            {% else %}
-                                Chuvoso
-                            {% endif %}
-                            </td>
-                            
-                        </tr>
-
-                        <tr>
-                            <th>Mai</th>
-                            <td>{{data.t_med_mai}}</td>
-                            <td>{{data.precip_md_mai}}</td>
-                            <td>
-                                {% if data.precip_md_mai <= multiplicacao.mai %}
-                                Seco
-                            {% else %}
-                                Chuvoso
-                            {% endif %}
-                            </td>
-                            
-                        </tr>
-
-                        <tr>
-                            <th>Jun</th>
-                            <td>{{data.t_med_jun}}</td>
-                            <td>{{data.precip_md_jun}}</td>
-                            <td>
-                                {% if data.precip_md_jun <= multiplicacao.jun %}
-                                Seco
-                            {% else %}
-                                Chuvoso
-                            {% endif %}
-                            </td>
-                            
-                        </tr>
-
-                        <tr>
-                            <th>Jul</th>
-                            <td>{{data.t_med_jul}}</td>
-                            <td>{{data.precip_md_jul}}</td>
-                            <td>
-                                {% if data.precip_md_jul <= multiplicacao.jul %}
-                                Seco
-                            {% else %}
-                                Chuvoso
-                            {% endif %}
-                            </td>
-                            
-                        </tr>
-
-                        <tr>
-                            <th>Ago</th>
-                            <td>{{data.t_med_ago}}</td>
-                            <td>{{data.precip_md_ago}}</td>
-                            <td>
-                                {% if data.precip_md_ago <= multiplicacao.ago %}
-                                Seco
-                            {% else %}
-                                Chuvoso
-                            {% endif %}
-                            </td>
-                            
-                        </tr>
-
-                        <tr>
-                            <th>Set</th>
-                            <td>{{data.t_med_set}}</td>
-                            <td>{{data.precip_md_set}}</td>
-                            <td>
-                                {% if data.precip_md_set <= multiplicacao.set %}
-                                Seco
-                            {% else %}
-                                Chuvoso
-                            {% endif %}
-                            </td>
-                            
-                        </tr>
-
-                        <tr>
-                            <th>Out</th>
-                            <td>{{data.t_med_out}}</td>
-                            <td>{{data.precip_md_out}}</td>
-                            <td>
-                                {% if data.precip_md_out <= multiplicacao.out %}
-                                Seco
-                            {% else %}
-                                Chuvoso
-                            {% endif %}
-                            </td>
-                            
-                        </tr>
-
-                        <tr>
-                            <th>Nov</th>
-                            <td>{{data.t_med_nov}}</td>
-                            <td>{{data.precip_md_nov}}</td>
-                            <td>
-                                {% if data.precip_md_nov <= multiplicacao.nov %}
-                                Seco
-                            {% else %}
-                                Chuvoso
-                            {% endif %}
-                            </td>
-                            
-                        </tr>
-
-                        <tr>
-                            <th>Dez</th>
-                            <td>{{data.t_med_dez}}</td>
-                            <td>{{data.precip_md_dez}}</td>
-                            <td>
-                                {% if data.precip_md_dez <= multiplicacao.dez %}
-                                Seco
-                            {% else %}
-                                Chuvoso
-                            {% endif %}
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <th>Média</th>
-                            <td>{{multiplicacao.med_temp}}</td>
-                            <td>{{multiplicacao.med_precip}}</td>
-                            <th>Meses Secos: {{total}}</th>
-                        </tr>
-                    </tbody>
-                </table>
-                {% else %}
-                    <img src="{% static "imagens/LogoRN.png" %}" alt="Logo do RN" usemap="#mapa">
-                    <map name="mapa" id="mapa">
-                        <area shape="poly" coords="0,0,0,250,250,0,250,250" href="https://github.com/arthurr07/ClimoTrack" alt="">
-                    </map>
-                {% endif %}
-            </div>
+                </div>
+            </div>    
+            <section class = "legenda">
+                <h5>Legenda:</h5>
+                    <ul>
+                        <li>AC - Área Comunitária</li>
+                        <li>FZ - Fazenda</li>
+                        <li>ST - Sítio</li>
+                    </ul>
+            </section>
         </div>
     {% endblock %}
