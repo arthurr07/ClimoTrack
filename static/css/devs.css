@@ -38,7 +38,8 @@ h1 {
 
 }
 
-img {
+
+.team-member img {
     width: 40px;
     height: 150px;
     border-radius: 50%;
