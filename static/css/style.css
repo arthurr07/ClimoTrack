@@ -149,3 +149,7 @@ area:hover{
 .colunas>*{
     width: 100%;
 }
+
+.ul a{
+    color: #000000;
+}
