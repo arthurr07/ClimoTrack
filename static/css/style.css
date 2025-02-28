@@ -114,9 +114,11 @@ footer img {
   }
   
 table{
-    width: 95%;
+    width: 600px;
     border-collapse: collapse;
     background-color: #384866;
+    margin-left: 100px;
+    margin-top: 30px;
 }
 td, th{
     border: 5px solid white; /* Adiciona uma borda preta de 1px */
@@ -136,6 +138,7 @@ h4{
     margin-top: 50px;
     font-size: 35px;
     color:#384866;
+
 }
 area:hover{
     background-color: red;
@@ -174,5 +177,9 @@ area:hover{
 .legenda ul{
     margin-top: .5em;
     list-style: none;
+}
+
+.rn{
+    margin-left: 100px;
 }
 
