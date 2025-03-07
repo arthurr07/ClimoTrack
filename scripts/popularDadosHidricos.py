@@ -7,12 +7,41 @@ fields = ['ESTACAO_ID','T_MED_JAN','T_MED_FEV','T_MED_MAR','T_MED_ABR','T_MED_MA
 df = pd.read_csv("banco/BASE FINAL - DADOS CLIMÁTICOS - Cópia.xlsm - Plan1.csv", delimiter = ",", on_bad_lines="skip", encoding='ISO-8859-1', usecols=fields)
 df.columns = df.columns.str.strip()
 
-connection =sqlite3.connect("db.sqlite3")
+# connection =sqlite3.connect("db.sqlite3")
 
-df.to_sql('app_dadoshidricos', connection, if_exists='append', index = False)
+# df.to_sql('app_dadoshidricos', connection, if_exists='append', index = False)
 # df.rename(columns={'T.MED_JAN':'t_med_jan','T.MED_FEV': 't_med_fev','T.MED_MAR':'t_med_mar','T.MED_ABR':'t_med_abr','T.MED_MAI':'t_med_mai','T.MED_JUN':'t_med_jun','T.MED_JUL':'t_med_jul',
 #         'T.MED_AGO':'t_med_ago','T.MED_SET':'t_med_set','T.MED_OUT':'t_med_out','T.MED_NOV':'t_med_nov','T.MED_DEZ':'t_med_dez',
 #         'PRECIP.MD_JAN':'precip_med_jan','PRECIP.MD_FEV':'precip_med_fev','PRECIP.MD_MAR':'precip_med_mar','PRECIP.MD_ABR':'precip_med_abr','PRECIP.MD_MAI':'precip_med_mai','PRECIP.MD_JUN':'precip_med_jun',
 #         'PRECIP.MD_JUL':'precip_med_jul','PRECIP.MD_AGO':'precip_med_ago','PRECIP.MD_SET':'precip_med_set',
 #         'PRECIP.MD_OUT':'precip_med_out','PRECIP.MD_NOV':'precip_med_nov','PRECIP.MD_DEZ':'precip_med_dez'})
-print(df)
+for n in range(134):
+    # print(df.loc[[n]]) exemplo
+    # print(df.loc[[n]].ESTACAO_ID.to_string(index = False))
+    print('[',df.loc[[n]].ESTACAO_ID.to_string(index = False), ',',
+          df.loc[[n]].T_MED_JAN.to_string(index = False), ',',
+          df.loc[[n]].T_MED_FEV.to_string(index = False), ',',
+          df.loc[[n]].T_MED_MAR.to_string(index = False), ',',
+          df.loc[[n]].T_MED_ABR.to_string(index = False), ',',
+          df.loc[[n]].T_MED_MAI.to_string(index = False), ',',
+          df.loc[[n]].T_MED_JUN.to_string(index = False), ',',
+          df.loc[[n]].T_MED_JUL.to_string(index = False), ',',
+          df.loc[[n]].T_MED_AGO.to_string(index = False), ',',
+          df.loc[[n]].T_MED_SET.to_string(index = False), ',',
+          df.loc[[n]].T_MED_OUT.to_string(index = False), ',',
+          df.loc[[n]].T_MED_NOV.to_string(index = False), ',',
+          df.loc[[n]].T_MED_DEZ.to_string(index = False), ',',
+          df.loc[[n]].PRECIP_MD_JAN.to_string(index = False), ',',
+          df.loc[[n]].PRECIP_MD_FEV.to_string(index = False), ',',
+          df.loc[[n]].PRECIP_MD_MAR.to_string(index = False), ',',
+          df.loc[[n]].PRECIP_MD_ABR.to_string(index = False), ',',
+          df.loc[[n]].PRECIP_MD_MAI.to_string(index = False), ',',
+          df.loc[[n]].PRECIP_MD_JUN.to_string(index = False), ',',
+          df.loc[[n]].PRECIP_MD_JUL.to_string(index = False), ',',
+          df.loc[[n]].PRECIP_MD_AGO.to_string(index = False), ',',
+          df.loc[[n]].PRECIP_MD_SET.to_string(index = False), ',',
+          df.loc[[n]].PRECIP_MD_OUT.to_string(index = False), ',',
+          df.loc[[n]].PRECIP_MD_NOV.to_string(index = False), ',',
+          df.loc[[n]].PRECIP_MD_DEZ.to_string(index = False),'],')
+        
+        
