@@ -1,0 +1,101 @@
+/* Tudo dentro do @media para telas pequenas */
+@media screen and (max-width: 716px) {
+  
+  /* Navbar ajusta para coluna */
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1em;
+  }
+
+  nav > div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1em 0;
+  }
+
+  /* Conteúdo principal ajusta largura */
+  main > div {
+    width: 95%;
+    padding: 1em;
+    margin: auto;
+  }
+
+  /* Tabelas fluídas */
+  table {
+    width: 100% !important;
+    margin: 0 !important;
+    overflow-x: auto;
+    display: block;
+  }
+
+  /* Colunas viram bloco vertical */
+  .colunas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .colunas > * {
+    width: 100%;
+  }
+
+  /* Login box se adapta */
+  .login-box {
+    width: 90% !important;
+    height: auto;
+    margin: 50px auto;
+  }
+
+  .input-box .input-field {
+    width: 100% !important;
+  }
+
+  .input-field:focus {
+    width: 100% !important;
+  }
+
+  .forgot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section2 {
+    margin-left: 0 !important;
+    margin-top: 10px;
+  }
+
+  /* Footer responsivo */
+  footer {
+    padding: 1em;
+    text-align: center;
+  }
+
+  footer ul {
+    padding: 0;
+  }
+
+  footer img {
+    width: 150px;
+  }
+
+ @media screen and (max-width: 716px) {
+  .rn {
+    display: none !important;
+  }
+}
+
+ /* @media screen and (max-width: 716px) {
+  .legenda, h5 {
+    margin-top: 100px;
+  }
+} */
+
+
+
+}
