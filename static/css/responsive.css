@@ -1,7 +1,7 @@
-/* Tudo dentro do @media para telas pequenas */
+
 @media screen and (max-width: 716px) {
   
-  /* Navbar ajusta para coluna */
+
   nav {
     flex-direction: column;
     height: auto;
@@ -20,14 +20,14 @@
     padding: 1em 0;
   }
 
-  /* Conteúdo principal ajusta largura */
+ 
   main > div {
     width: 95%;
     padding: 1em;
     margin: auto;
   }
 
-  /* Tabelas fluídas */
+
   table {
     width: 100% !important;
     margin: 0 !important;
@@ -35,7 +35,7 @@
     display: block;
   }
 
-  /* Colunas viram bloco vertical */
+
   .colunas {
     flex-direction: column;
     width: 100%;
@@ -45,7 +45,7 @@
     width: 100%;
   }
 
-  /* Login box se adapta */
+
   .login-box {
     width: 90% !important;
     height: auto;
@@ -53,7 +53,7 @@
   }
 
   .input-box .input-field {
-    width: 100% !important;
+    width: 100% 
   }
 
   .input-field:focus {
@@ -70,7 +70,7 @@
     margin-top: 10px;
   }
 
-  /* Footer responsivo */
+ 
   footer {
     padding: 1em;
     text-align: center;
@@ -84,18 +84,19 @@
     width: 150px;
   }
 
- @media screen and (max-width: 716px) {
   .rn {
     display: none !important;
   }
+
+  .container h1 {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+  
 }
 
- /* @media screen and (max-width: 716px) {
-  .legenda, h5 {
-    margin-top: 100px;
-  }
-} */
-
 
 
 }
+
+
