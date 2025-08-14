@@ -1,16 +1,18 @@
 @media screen and (max-width: 716px) {
 
   nav {
-    flex-direction: column;
+    flex-direction: row;
     height: auto;
     padding: 1em;
-    gap: 0.5em;
+    gap: 1em;
+    justify-content: space-between; /* separa logo e menu */
   }
-
+  
   nav > div {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row; /* mantém horizontal */
     align-items: center;
-    gap: 0.5em;
+    gap: 1em;
   }
 
   nav a {
@@ -25,6 +27,18 @@
     width: 95%;
     padding: 1em;
     margin: auto;
+  }
+
+  /* Forçar formulário e tabela a ficarem empilhados */
+  .d-flex {
+    display: flex; 
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5em;
+  }
+
+  .d-flex > div {
+    width: 100%;
   }
 
   /* Tabelas responsivas */
@@ -71,7 +85,6 @@
     margin: 10px 0 0 0;
   }
 
- 
   footer {
     padding: 1em;
     text-align: center;
@@ -87,7 +100,7 @@
     height: auto;
   }
 
-  /* Esconder mapa do rn*/
+  /* Esconder mapa do rn */
   .rn {
     display: none;
   }
