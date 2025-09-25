@@ -7,9 +7,15 @@ from django.db import migrations
 
 def load_ufs(apps, schema_editor):
     Estado = apps.get_model("app", "Estado")
-    uf = Estado()
-    uf.nome = "Rio Grande do Norte"
-    uf.save()
+    estados = [
+        "Rio Grande do Norte",
+        "Paraíba",
+        "Ceará"
+    ]
+    for e in estados:
+        uf = Estado()
+        uf.nome = e
+        uf.save()
 
 # Criar método similar ao load_ufs() para carregar Cidades e DadosHídricos
 
@@ -117,7 +123,6 @@ def load_cidades(apps, schema_editor):
      "S.Vicente",
      "Totoró",
      "Currais Novos",
-     "Cruzeta (AC)",
      "Cruzeta (AC)",
      "Gargalheiras (AC)",
      "Cerro Corá",
@@ -333,7 +338,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(load_ufs), # Repetir essa linha para chamar os métodos das Cidades e DadosHídricos
-        migrations.RunPython(load_cidades),
-        migrations.RunPython(load_dados_hidricos), 
+        # migrations.RunPython(load_ufs), # Repetir essa linha para chamar os métodos das Cidades e DadosHídricos
+        # migrations.RunPython(load_cidades),
+        # migrations.RunPython(load_dados_hidricos), 
     ]

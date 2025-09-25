@@ -7,7 +7,7 @@
                     <h4>Selecione a Localização: </h4>
                     <form action="{% url 'home' %}" class="selecionador" method = "POST">
                         {% csrf_token %}
-                        <select id = 'uf'>
+                        <select id = 'uf' onchange="window.location=this.value">
                             {% for uf in uf_list %}
                             <option value="{{uf.id}}">{{uf.nome}}</option>
                             {% endfor %}

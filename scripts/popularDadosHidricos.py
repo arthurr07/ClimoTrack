@@ -7,9 +7,9 @@ fields = ['ESTACAO_ID','T_MED_JAN','T_MED_FEV','T_MED_MAR','T_MED_ABR','T_MED_MA
 df = pd.read_csv("banco/BASE FINAL - DADOS CLIMÁTICOS - Cópia.xlsm - Plan1.csv", delimiter = ",", on_bad_lines="skip", encoding='ISO-8859-1', usecols=fields)
 df.columns = df.columns.str.strip()
 
-# connection =sqlite3.connect("db.sqlite3")
+connection =sqlite3.connect("db.sqlite3")
 
-# df.to_sql('app_dadoshidricos', connection, if_exists='append', index = False)
+df.to_sql('app_dadoshidricos', connection, if_exists='append', index = False)
 # df.rename(columns={'T.MED_JAN':'t_med_jan','T.MED_FEV': 't_med_fev','T.MED_MAR':'t_med_mar','T.MED_ABR':'t_med_abr','T.MED_MAI':'t_med_mai','T.MED_JUN':'t_med_jun','T.MED_JUL':'t_med_jul',
 #         'T.MED_AGO':'t_med_ago','T.MED_SET':'t_med_set','T.MED_OUT':'t_med_out','T.MED_NOV':'t_med_nov','T.MED_DEZ':'t_med_dez',
 #         'PRECIP.MD_JAN':'precip_med_jan','PRECIP.MD_FEV':'precip_med_fev','PRECIP.MD_MAR':'precip_med_mar','PRECIP.MD_ABR':'precip_med_abr','PRECIP.MD_MAI':'precip_med_mai','PRECIP.MD_JUN':'precip_med_jun',

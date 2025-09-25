@@ -22,6 +22,7 @@ from app.views import index, table, login, devs
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='home'),
+    path('<int:estado_id>', index, name='home'),
     path('table/', table, name='table'),
     path('login/', login, name='login'), # Use LoginView aqui
     path('devs/', devs, name='devs')  

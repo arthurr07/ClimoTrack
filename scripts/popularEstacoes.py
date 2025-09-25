@@ -1,9 +1,9 @@
 import pandas as pd
 import sqlite3
 
-fields = ['ESTACAO']
+fields = ['ESTACAO','ESTADO_ID']
 df = pd.read_csv("banco/BASE FINAL - DADOS CLIMÁTICOS - Cópia.xlsm - Plan1.csv", delimiter = ",", on_bad_lines="skip", encoding='UTF-8', usecols=fields)
-df["estado_id"]=1
+# df["estado_id"]=1
 df.columns = df.columns.str.strip()
 
 connection =sqlite3.connect("db.sqlite3")
