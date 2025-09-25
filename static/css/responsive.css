@@ -1,4 +1,4 @@
-@media screen and (max-width: 716px) {
+@media screen and (max-width: 600px) {
 
   nav {
     flex-direction: row;
@@ -22,12 +22,6 @@
     padding: 0.8em 0;
   }
 
-  /* Conteúdo principal */
-  main > div {
-    width: 95%;
-    padding: 1em;
-    margin: auto;
-  }
 
   /* Forçar formulário e tabela a ficarem empilhados */
   .d-flex {
@@ -44,10 +38,7 @@
   /* Tabelas responsivas */
   table {
     width: 100%;
-    border-collapse: collapse;
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
+    margin-left: 0px;
   }
 
   /* Colunas viram blocos */
