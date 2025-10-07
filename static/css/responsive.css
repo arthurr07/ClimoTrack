@@ -104,6 +104,10 @@
     word-break: break-word;
   }
 
+  p{
+    font-size: 13px;
+  }
+
   /* table caption {
     text-align: center;
     font-size: 19px;

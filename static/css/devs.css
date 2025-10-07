@@ -26,12 +26,6 @@ body {
     color: white;
 }
 
-.team-member:nth-child(even) {
-    flex-direction: row-reverse;
-  }
-
-
-
 h1 {
     font-size: 24px;
     color: #1a3b5d;
@@ -56,11 +50,12 @@ h2 {
     font-size: 18px;
     margin: 10px;
     color: #1a3b;
+    text-align: justify;
     /* margin-right: 100em; */
 }
 
 p {
-    font-size: 12px;
+    font-size: 16px;
     margin: 5px;
     text-align: justify;
 }
