@@ -26,13 +26,11 @@ body {
     color: white;
 }
 
+.team-member:nth-child(even) {
+    flex-direction: row-reverse;
+  }
 
-.img-right {
-    border-radius: 50%;
 
-
-
-}
 
 h1 {
     font-size: 24px;
@@ -48,10 +46,10 @@ h1 {
     margin: 0 15px;
 }
 
-.img-right {
+/* .img-right {
     margin-left: 80%;
 
-}
+} */
 
 
 h2 {
@@ -64,5 +62,6 @@ h2 {
 p {
     font-size: 12px;
     margin: 5px;
+    text-align: justify;
 }
 
